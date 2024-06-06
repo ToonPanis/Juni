@@ -12,10 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
       - name: Update diagram
-        uses: githubocto/repo-visualizer@main
-        with:
-          output_file: "images/diagram.svg"
-          excluded_paths: "ignore,.github,dist,node_modules"
+        id: make_diagram
+        uses: githubocto/repo-visualizer@0.7.1
+
       - name: Get artifact
         uses: actions/download-artifact@v2
         with:
